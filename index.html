@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Future of Information Lab</title>
+  <meta name="description" content="The Future of Information Lab (FOiL) at the University of Illinois Urbana-Champaign helps people sustain an intentional, trustworthy, and constructive relationship with their online information ecosystems.">
+  <link rel="icon" href="favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&amp;family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600&amp;display=swap">
+  <link rel="stylesheet" href="assets/css/foil.css">
+</head>
+<body>
+<script>
+  /* apply a saved day/night choice before the page paints */
+  try { var t = localStorage.getItem('foil-theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch (e) {}
+</script>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap">
+    <div class="header-top">
+      <a class="brand" href="index.html" aria-label="Future of Information Lab, home">
+        <img class="logo-light" src="assets/logo/foil-mark.png" alt="" width="255" height="256">
+        <img class="logo-dark" src="assets/logo/foil-mark-night.png" alt="" width="255" height="256">
+        <span class="wordmark">Future of<br>Information Lab</span>
+      </a>
+      <button class="theme-toggle" type="button" id="theme-toggle" aria-label="Switch to night mode" title="Switch to night mode">
+        <svg class="icon-moon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+        <svg class="icon-sun" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><circle cx="12" cy="12" r="4.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 2.5v2.5M12 19v2.5M2.5 12H5M19 12h2.5M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M5.3 18.7l1.8-1.8M16.9 7.1l1.8-1.8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+    <nav class="site-nav" aria-label="Main">
+      <ul>
+        <li><a href="index.html" aria-current="page">About</a></li>
+        <li><a href="research.html">Research</a></li>
+        <li><a href="members.html">Members</a></li>
+        <li><a href="join.html">Join us</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+  <h1 class="sr-only">Future of Information Lab</h1>
+  <section class="about" aria-label="About the lab">
+    <p class="lead">The Future of Information Lab is a research group in the <a href="https://ischool.illinois.edu/">School of Information Sciences</a> at the University of Illinois Urbana-Champaign, led by <a href="members.html">Dr. Marianne Aubin Le Quéré</a>. We conduct mixed-method research in Human-Computer Interaction, Computational Social Science, and Communication.</p>
+    <p class="lead">We aim to help people sustain an intentional, trustworthy, and constructive relationship with their online information ecosystems in the generative AI age.</p>
+  </section>
+
+  <section aria-labelledby="directions-title">
+    <h2 class="section-title" id="directions-title">Research directions</h2>
+    <p>Our work follows three directions.</p>
+    <ol class="dir-cards">
+      <li class="dir-card">
+        <h3>Agency over information</h3>
+        <p>Feeds are built to maximize engagement, and many people feel they have lost control of what they see. We design tools, like personalized and agentic feeds, that help people shape their information environments with intent and look after their wellbeing.</p>
+        <p class="dir-themes">news and mental health · social media and wellbeing · personalized and agentic feeds</p>
+        <a class="more" href="research.html#agency">More on this direction →</a>
+      </li>
+      <li class="dir-card">
+        <h3>Trust in AI-mediated information</h3>
+        <p>AI increasingly shapes how people judge the credibility of civic information. We study how to calibrate trust in AI-generated content, and how journalists, creators and moderators can show the work behind what they publish.</p>
+        <p class="dir-themes">credibility, trust, and provenance of AI content · generative AI search · AI tools for information workers</p>
+        <a class="more" href="research.html#trust">More on this direction →</a>
+      </li>
+      <li class="dir-card">
+        <h3>Attention and informedness</h3>
+        <p>What people see online shapes how they understand the world, yet that exposure is often siloed or opaque. We measure what civic information people actually encounter, in what contexts, and how they make sense of it.</p>
+        <p class="dir-themes">news knowledge index · attention to online news · local news availability</p>
+        <a class="more" href="research.html#attention">More on this direction →</a>
+      </li>
+    </ol>
+  </section>
+
+  <section aria-labelledby="news-title">
+    <h2 class="section-title" id="news-title">News</h2>
+    <ul class="news">
+      <li><time datetime="2026-10-02">2026-10-02</time><p>Marianne and Hui En attend the <a href="https://www.cj2026.northwestern.edu">Computation and Journalism Symposium</a>, where they will run a workshop on personalized, agentic news feeds.</p></li>
+      <li><time datetime="2026-08-16">2026-08-16</time><p>The first PhD student, Hui En Loo, joins the lab.</p></li>
+      <li><time datetime="2026-08-16">2026-08-16</time><p>Marianne begins her appointment as an Assistant Professor in the School of Information Sciences, and the Future of Information Lab is born.</p></li>
+    </ul>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>© 2026 Future of Information Lab (FOiL)</p>
+    <p>School of Information Sciences · University of Illinois Urbana-Champaign</p>
+    <p class="disclosure">This website was built with the help of <a href="https://www.anthropic.com/claude">Claude</a>, an AI assistant made by Anthropic.</p>
+  </div>
+</footer>
+<script>
+  /* day/night toggle: follows the system setting until the visitor picks one */
+  (function () {
+    var root = document.documentElement;
+    var btn = document.getElementById('theme-toggle');
+    var media = window.matchMedia('(prefers-color-scheme: dark)');
+    function current() { return root.getAttribute('data-theme') || (media.matches ? 'dark' : 'light'); }
+    function sync() {
+      var dark = current() === 'dark';
+      var text = dark ? 'Switch to day mode' : 'Switch to night mode';
+      btn.setAttribute('aria-label', text);
+      btn.title = text;
+    }
+    btn.addEventListener('click', function () {
+      var next = current() === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', next);
+      try { localStorage.setItem('foil-theme', next); } catch (e) {}
+      sync();
+    });
+    if (media.addEventListener) media.addEventListener('change', sync);
+    sync();
+  })();
+</script>
+</body>
+</html>

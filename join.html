@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Join us · Future of Information Lab</title>
+  <meta name="description" content="How to join the Future of Information Lab as a PhD, MS or undergraduate student.">
+  <link rel="icon" href="favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&amp;family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600&amp;display=swap">
+  <link rel="stylesheet" href="assets/css/foil.css">
+</head>
+<body>
+<script>
+  /* apply a saved day/night choice before the page paints */
+  try { var t = localStorage.getItem('foil-theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch (e) {}
+</script>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap">
+    <div class="header-top">
+      <a class="brand" href="index.html" aria-label="Future of Information Lab, home">
+        <img class="logo-light" src="assets/logo/foil-mark.png" alt="" width="255" height="256">
+        <img class="logo-dark" src="assets/logo/foil-mark-night.png" alt="" width="255" height="256">
+        <span class="wordmark">Future of<br>Information Lab</span>
+      </a>
+      <button class="theme-toggle" type="button" id="theme-toggle" aria-label="Switch to night mode" title="Switch to night mode">
+        <svg class="icon-moon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+        <svg class="icon-sun" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><circle cx="12" cy="12" r="4.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 2.5v2.5M12 19v2.5M2.5 12H5M19 12h2.5M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M5.3 18.7l1.8-1.8M16.9 7.1l1.8-1.8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+    <nav class="site-nav" aria-label="Main">
+      <ul>
+        <li><a href="index.html">About</a></li>
+        <li><a href="research.html">Research</a></li>
+        <li><a href="members.html">Members</a></li>
+        <li><a href="join.html" aria-current="page">Join us</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+  <h1>Join us</h1>
+
+  <section aria-labelledby="phd-title">
+    <h2 class="section-title" id="phd-title">PhD students</h2>
+    <p>We will be recruiting new PhD students to join the lab in <strong>Fall 2027</strong>.</p>
+    <p>Interested PhD students should apply to the <a href="https://ischool.illinois.edu/academics/graduate/phd-information-sciences">Ph.D. in Information Sciences</a> at the University of Illinois Urbana-Champaign and list Dr. Marianne Aubin Le Quéré as a faculty advisor. More details are on the <a href="https://ischool.illinois.edu/academics/graduate/phd-information-sciences/apply">application page</a>. Marianne can also advise students in the <a href="https://informatics.ischool.illinois.edu/academics/informatics/phd-informatics/">Informatics Ph.D.</a> program.</p>
+    <p>If you are interested in joining the lab as a future PhD student, you can send a short email detailing your research interests, with an attached CV, to Marianne (<a href="mailto:malq@illinois.edu">malq@illinois.edu</a>). We get many such emails, and as such we cannot guarantee a response, but this is the best way to express your interest. If you do not receive a response, this is not a reflection of the strength of your application!</p>
+  </section>
+
+  <section aria-labelledby="ugms-title">
+    <h2 class="section-title" id="ugms-title">Undergraduate and MS students</h2>
+    <p>We plan to recruit 1–3 undergraduate and MS students to join the lab in <strong>Spring 2027</strong>. This opportunity is open only to students already enrolled at UIUC, at the undergraduate or master’s level. You can join through an independent study (1–4 credits) or a paid research position (up to 12 hours a week).</p>
+    <h3>How to apply</h3>
+    <ol class="steps">
+      <li>Prepare your CV and a few short answers: what motivates you to work with the lab, the research topics you’re interested in (feel free to pitch a project), and the relevant courses you’ve taken.</li>
+      <li>Describe a project you completed through research, an internship, a course or another experience: why the problem is important, the key technical or methodological challenges, and how you addressed them. A few sentences are enough.</li>
+      <li>Submit the student application form, signed in with your Illinois Google account.</li>
+      <li>We will contact applicants in November 2026 for an interview.</li>
+    </ol>
+    <p><a class="btn" href="https://forms.gle/tYtFfq1YbSdCUDHt7">Click here to fill up the application</a></p>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>© 2026 Future of Information Lab (FOiL)</p>
+    <p>School of Information Sciences · University of Illinois Urbana-Champaign</p>
+    <p class="disclosure">This website was built with the help of <a href="https://www.anthropic.com/claude">Claude</a>, an AI assistant made by Anthropic.</p>
+  </div>
+</footer>
+<script>
+  /* day/night toggle: follows the system setting until the visitor picks one */
+  (function () {
+    var root = document.documentElement;
+    var btn = document.getElementById('theme-toggle');
+    var media = window.matchMedia('(prefers-color-scheme: dark)');
+    function current() { return root.getAttribute('data-theme') || (media.matches ? 'dark' : 'light'); }
+    function sync() {
+      var dark = current() === 'dark';
+      var text = dark ? 'Switch to day mode' : 'Switch to night mode';
+      btn.setAttribute('aria-label', text);
+      btn.title = text;
+    }
+    btn.addEventListener('click', function () {
+      var next = current() === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', next);
+      try { localStorage.setItem('foil-theme', next); } catch (e) {}
+      sync();
+    });
+    if (media.addEventListener) media.addEventListener('change', sync);
+    sync();
+  })();
+</script>
+</body>
+</html>

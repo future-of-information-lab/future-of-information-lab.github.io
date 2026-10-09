@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Research · Future of Information Lab</title>
+  <meta name="description" content="Research directions of the Future of Information Lab: user agency, trustworthy AI-mediated information, and online attention and informedness.">
+  <link rel="icon" href="favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&amp;family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600&amp;display=swap">
+  <link rel="stylesheet" href="assets/css/foil.css">
+</head>
+<body>
+<script>
+  /* apply a saved day/night choice before the page paints */
+  try { var t = localStorage.getItem('foil-theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch (e) {}
+</script>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap">
+    <div class="header-top">
+      <a class="brand" href="index.html" aria-label="Future of Information Lab, home">
+        <img class="logo-light" src="assets/logo/foil-mark.png" alt="" width="255" height="256">
+        <img class="logo-dark" src="assets/logo/foil-mark-night.png" alt="" width="255" height="256">
+        <span class="wordmark">Future of<br>Information Lab</span>
+      </a>
+      <button class="theme-toggle" type="button" id="theme-toggle" aria-label="Switch to night mode" title="Switch to night mode">
+        <svg class="icon-moon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+        <svg class="icon-sun" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><circle cx="12" cy="12" r="4.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 2.5v2.5M12 19v2.5M2.5 12H5M19 12h2.5M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M5.3 18.7l1.8-1.8M16.9 7.1l1.8-1.8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+    <nav class="site-nav" aria-label="Main">
+      <ul>
+        <li><a href="index.html">About</a></li>
+        <li><a href="research.html" aria-current="page">Research</a></li>
+        <li><a href="members.html">Members</a></li>
+        <li><a href="join.html">Join us</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+  <h1>Research</h1>
+  <section class="direction" id="agency" aria-labelledby="agency-t">
+    <h2 class="section-title" id="agency-t"><span class="num">1.</span> Fostering user agency over information environments</h2>
+    <p>Many people feel disempowered over their information environments, in part because technology companies optimize for user engagement over deliberate intent. How can people regain agency and transparency over their information environments?</p>
+    <p class="themes"><span>Current themes</span> news and mental health · social media and wellbeing · personalized and agentic feeds</p>
+    <h3 class="label">Example papers</h3>
+    <ul class="papers">
+      <li class="paper">
+        <h4>Reactive Writers: How Co-Writing with AI Changes How We Engage with Ideas</h4>
+        <p class="venue">CHI 2026</p>
+        <p>Interviews with 19 writers and an analysis of 1,291 AI co-writing sessions show that people start reacting to the AI’s suggestions before forming their own ideas, while still feeling in control of the text.</p>
+        <a class="btn-paper" href="https://dl.acm.org/doi/abs/10.1145/3772318.3791529">Read the paper <span aria-hidden="true">↗</span></a>
+      </li>
+      <li class="paper">
+        <h4>An Article a Day: Towards Personal Informatics for Healthy News Consumption</h4>
+        <p class="venue">CHI 2024 Extended Abstracts</p>
+        <p>Twelve avid news readers reflect on a dashboard of their own reading data. They want to feel informed without sacrificing their mental health, and self-tracking tools could help with both.</p>
+        <a class="btn-paper" href="https://dl.acm.org/doi/full/10.1145/3613905.3650854">Read the paper <span aria-hidden="true">↗</span></a>
+      </li>
+      <li class="paper">
+        <h4>Bonsai: Intentional and Personalized Social Media Feeds</h4>
+        <p class="venue">CHI 2026</p>
+        <p>A system that lets people build their own feeds by describing what they want in plain language. In a multi-week study, Bluesky users found new content and filtered out toxic posts, though curating took more effort than usual.</p>
+        <a class="btn-paper" href="https://dl.acm.org/doi/abs/10.1145/3772318.3791855">Read the paper <span aria-hidden="true">↗</span></a>
+      </li>
+    </ul>
+  </section>
+
+  <section class="direction" id="trust" aria-labelledby="trust-t">
+    <h2 class="section-title" id="trust-t"><span class="num">2.</span> Designing trustworthy AI-mediated information ecosystems</h2>
+    <p>AI increasingly shapes how people gauge the credibility and quality of civic information online. How can we calibrate user trust in AI-generated and AI-mediated information? And how can we help information stewards – like journalists, content creators, and moderators – better represent their epistemic work processes to lay audiences?</p>
+    <p class="themes"><span>Current themes</span> credibility, trust, and provenance of AI content · generative AI search · AI tools for information workers</p>
+    <h3 class="label">Example paper</h3>
+    <ul class="papers single">
+      <li class="paper">
+        <h4>“Ownership, Not Just Happy Talk”: Co-Designing a Participatory Large Language Model for Journalism</h4>
+        <p class="venue">FAccT 2025</p>
+        <p>Twenty interviews with reporters, editors, labor organizers and newsroom leaders shape the design of a journalist-controlled large language model, and the organizational structures it would need.</p>
+        <a class="btn-paper" href="https://dl.acm.org/doi/abs/10.1145/3715275.3732198">Read the paper <span aria-hidden="true">↗</span></a>
+      </li>
+    </ul>
+  </section>
+
+  <section class="direction" id="attention" aria-labelledby="attention-t">
+    <h2 class="section-title" id="attention-t"><span class="num">3.</span> Understanding online attention and informedness</h2>
+    <p>People’s online information environments are crucial to shaping their perceptions of the world and the ways they contribute to society, but online information exposure is often siloed or opaque. What civic information do people actually encounter online, in what contexts, and how do they make sense of it?</p>
+    <p class="themes"><span>Current themes</span> news knowledge index · attention to online news · local news availability</p>
+    <h3 class="label">Example paper</h3>
+    <ul class="papers single">
+      <li class="paper">
+        <h4>When Curiosity Gaps Backfire: Effects of Headline Concreteness on Information Selection Decisions</h4>
+        <p class="venue">Scientific Reports 2025</p>
+        <p>A registered report and meta-analysis of 8,977 headline experiments. Headlines that give just the right amount of information draw the most clicks; headlines that are too vague or too concrete both lose readers.</p>
+        <a class="btn-paper" href="https://www.nature.com/articles/s41598-024-81575-9">Read the paper <span aria-hidden="true">↗</span></a>
+      </li>
+    </ul>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>© 2026 Future of Information Lab (FOiL)</p>
+    <p>School of Information Sciences · University of Illinois Urbana-Champaign</p>
+    <p class="disclosure">This website was built with the help of <a href="https://www.anthropic.com/claude">Claude</a>, an AI assistant made by Anthropic.</p>
+  </div>
+</footer>
+<script>
+  /* day/night toggle: follows the system setting until the visitor picks one */
+  (function () {
+    var root = document.documentElement;
+    var btn = document.getElementById('theme-toggle');
+    var media = window.matchMedia('(prefers-color-scheme: dark)');
+    function current() { return root.getAttribute('data-theme') || (media.matches ? 'dark' : 'light'); }
+    function sync() {
+      var dark = current() === 'dark';
+      var text = dark ? 'Switch to day mode' : 'Switch to night mode';
+      btn.setAttribute('aria-label', text);
+      btn.title = text;
+    }
+    btn.addEventListener('click', function () {
+      var next = current() === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', next);
+      try { localStorage.setItem('foil-theme', next); } catch (e) {}
+      sync();
+    });
+    if (media.addEventListener) media.addEventListener('change', sync);
+    sync();
+  })();
+</script>
+</body>
+</html>

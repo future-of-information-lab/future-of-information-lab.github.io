@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Members · Future of Information Lab</title>
+  <meta name="description" content="People in the Future of Information Lab.">
+  <link rel="icon" href="favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&amp;family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600&amp;display=swap">
+  <link rel="stylesheet" href="assets/css/foil.css">
+</head>
+<body>
+<script>
+  /* apply a saved day/night choice before the page paints */
+  try { var t = localStorage.getItem('foil-theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch (e) {}
+</script>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap">
+    <div class="header-top">
+      <a class="brand" href="index.html" aria-label="Future of Information Lab, home">
+        <img class="logo-light" src="assets/logo/foil-mark.png" alt="" width="255" height="256">
+        <img class="logo-dark" src="assets/logo/foil-mark-night.png" alt="" width="255" height="256">
+        <span class="wordmark">Future of<br>Information Lab</span>
+      </a>
+      <button class="theme-toggle" type="button" id="theme-toggle" aria-label="Switch to night mode" title="Switch to night mode">
+        <svg class="icon-moon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+        <svg class="icon-sun" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><circle cx="12" cy="12" r="4.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 2.5v2.5M12 19v2.5M2.5 12H5M19 12h2.5M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M5.3 18.7l1.8-1.8M16.9 7.1l1.8-1.8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+    <nav class="site-nav" aria-label="Main">
+      <ul>
+        <li><a href="index.html">About</a></li>
+        <li><a href="research.html">Research</a></li>
+        <li><a href="members.html" aria-current="page">Members</a></li>
+        <li><a href="join.html">Join us</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+  <h1>Members</h1>
+  <ul class="people">
+    <li class="person">
+      <img class="portrait" src="assets/people/marianne-aubin-le-quere.jpg" alt="Marianne Aubin Le Quéré" width="480" height="480">
+      <h2>Marianne Aubin Le Quéré</h2>
+      <p class="role">Assistant Professor · Principal Investigator</p>
+      <p>Studies how AI and other emerging technologies impact online news and civic information consumption.</p>
+      <ul class="links">
+        <li><a href="https://mariannealq.com/">Website</a></li>
+        <li><a href="https://scholar.google.com/citations?user=u3sO_OkAAAAJ">Google Scholar</a></li>
+        <li><a href="https://bsky.app/profile/mariannealq.bsky.social">Bluesky</a></li>
+        <li><a href="mailto:malq@illinois.edu">malq@illinois.edu</a></li>
+      </ul>
+    </li>
+    <li class="person">
+      <img class="portrait" src="assets/people/hui-en-loo.jpg" alt="Hui En Loo" width="380" height="380">
+      <h2>Hui En Loo</h2>
+      <p class="role">PhD Student</p>
+      <p>Interested in human–computer interaction, social computing and AI governance.</p>
+      <ul class="links">
+        <li><a href="https://www.loohuien.com/">Website</a></li>
+        <li><a href="https://scholar.google.com/citations?user=97S76QEAAAAJ">Google Scholar</a></li>
+        <li><a href="https://bsky.app/profile/huienheather.bsky.social">Bluesky</a></li>
+        <li><a href="mailto:heloo2@illinois.edu">heloo2@illinois.edu</a></li>
+      </ul>
+    </li>
+  </ul>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>© 2026 Future of Information Lab (FOiL)</p>
+    <p>School of Information Sciences · University of Illinois Urbana-Champaign</p>
+    <p class="disclosure">This website was built with the help of <a href="https://www.anthropic.com/claude">Claude</a>, an AI assistant made by Anthropic.</p>
+  </div>
+</footer>
+<script>
+  /* day/night toggle: follows the system setting until the visitor picks one */
+  (function () {
+    var root = document.documentElement;
+    var btn = document.getElementById('theme-toggle');
+    var media = window.matchMedia('(prefers-color-scheme: dark)');
+    function current() { return root.getAttribute('data-theme') || (media.matches ? 'dark' : 'light'); }
+    function sync() {
+      var dark = current() === 'dark';
+      var text = dark ? 'Switch to day mode' : 'Switch to night mode';
+      btn.setAttribute('aria-label', text);
+      btn.title = text;
+    }
+    btn.addEventListener('click', function () {
+      var next = current() === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', next);
+      try { localStorage.setItem('foil-theme', next); } catch (e) {}
+      sync();
+    });
+    if (media.addEventListener) media.addEventListener('change', sync);
+    sync();
+  })();
+</script>
+</body>
+</html>
