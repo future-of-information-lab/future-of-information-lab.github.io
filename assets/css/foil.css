@@ -130,8 +130,10 @@ html { scroll-padding-top: calc(var(--bar-h) + 16px); }
 :root[data-theme="dark"] .brand .logo-dark { display: inline; }
 
 .brand-full { gap: 14px; }
-.brand-full img { height: 60px; }
-.wordmark { font: 500 clamp(28px, 4.6vw, 40px)/1.1 var(--display); letter-spacing: -0.01em; white-space: nowrap; }
+.brand-full img { height: 52px; }
+/* the name has no descenders, so its line box sits high: nudge it down so the
+   capitals sit on the row's centre line */
+.wordmark { font: 500 clamp(26px, 4.2vw, 36px)/1.1 var(--display); letter-spacing: -0.01em; white-space: nowrap; position: relative; top: 0.13em; }
 
 .bar { display: flex; align-items: center; gap: 0 22px; height: var(--bar-h); padding-bottom: 8px; }
 .brand-compact {
@@ -178,8 +180,32 @@ html { scroll-padding-top: calc(var(--bar-h) + 16px); }
 :root[data-theme="dark"] .theme-toggle .icon-sun { display: block; }
 :root[data-theme="dark"] .theme-toggle .icon-moon { display: none; }
 
+/* wider screens: the mark stands in its own column on the left, spanning both
+   rows, with the name and the menu left-aligned beside it. When the bar pins,
+   the mark fades out and the compact logo takes its place in the same column,
+   so the menu never moves. */
+@media (min-width: 561px) {
+  :root { --masthead-h: 68px; --bar-h: 62px; --mark: 98px; --mark-col: calc(var(--mark) + 22px); }
+  .masthead, .bar { position: relative; padding-left: calc(var(--gutter) + var(--mark-col)); }
+  /* extra room under the menu keeps the foot of the mark clear of the rule */
+  .bar { padding-bottom: 14px; }
+  .brand-full img {
+    position: absolute; left: var(--gutter); top: 16px; height: var(--mark);
+    transition: opacity .2s ease;
+  }
+  /* drop the name towards the menu so the two read as one block beside the mark */
+  .wordmark { top: calc(0.13em + 10px); }
+  .is-stuck .brand-full img { opacity: 0; }
+  .brand-compact {
+    position: absolute; left: var(--gutter); top: 0; bottom: 14px;
+    max-width: none; margin-right: 0; overflow: visible;
+    transition: opacity .2s ease, visibility .2s;
+  }
+  .is-stuck .brand-compact { max-width: none; }
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .site-header, .brand-compact { transition: none; }
+  .site-header, .brand-compact, .brand-full img { transition: none; }
 }
 
 /* ---------- page body ---------- */
@@ -257,7 +283,7 @@ section + section { margin-top: 48px; }
   .brand-full { gap: 10px; }
   .brand-full img { height: 46px; }
   /* as large as the row allows beside the mark and the day/night button */
-  .wordmark { font-size: clamp(19px, calc((100vw - 140px) / 11.2), 28px); }
+  .wordmark { font-size: clamp(19px, calc((100vw - 140px) / 11.2), 26px); }
   .theme-toggle { position: absolute; right: var(--gutter); top: calc((var(--masthead-h) - 38px) / 2); }
   .bar { gap: 0 12px; }
   .brand-compact { gap: 6px; margin-right: -12px; }
