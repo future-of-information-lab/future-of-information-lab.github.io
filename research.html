@@ -18,19 +18,20 @@
   try { var t = localStorage.getItem('foil-theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch (e) {}
 </script>
 <a class="skip" href="#main">Skip to content</a>
-<header class="site-header">
-  <div class="wrap">
-    <div class="header-top">
-      <a class="brand" href="index.html" aria-label="Future of Information Lab, home">
-        <img class="logo-light" src="assets/logo/foil-mark.png" alt="" width="255" height="256">
-        <img class="logo-dark" src="assets/logo/foil-mark-night.png" alt="" width="255" height="256">
-        <span class="wordmark">Future of<br>Information Lab</span>
-      </a>
-      <button class="theme-toggle" type="button" id="theme-toggle" aria-label="Switch to night mode" title="Switch to night mode">
-        <svg class="icon-moon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
-        <svg class="icon-sun" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><circle cx="12" cy="12" r="4.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 2.5v2.5M12 19v2.5M2.5 12H5M19 12h2.5M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M5.3 18.7l1.8-1.8M16.9 7.1l1.8-1.8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-      </button>
-    </div>
+<header class="site-header" id="site-header">
+  <div class="masthead wrap">
+    <a class="brand brand-full" href="index.html" aria-label="Future of Information Lab, home">
+      <img class="logo-light" src="assets/logo/foil-mark.png" alt="" width="255" height="256">
+      <img class="logo-dark" src="assets/logo/foil-mark-night.png" alt="" width="255" height="256">
+      <span class="wordmark">Future of Information Lab</span>
+    </a>
+  </div>
+  <div class="bar wrap">
+    <a class="brand brand-compact" href="index.html" aria-label="FOiL, home">
+      <img class="logo-light" src="assets/logo/foil-mark.png" alt="" width="255" height="256">
+      <img class="logo-dark" src="assets/logo/foil-mark-night.png" alt="" width="255" height="256">
+      <span class="wordmark-short" aria-hidden="true">FO<span class="foil-i">ı</span>L</span>
+    </a>
     <nav class="site-nav" aria-label="Main">
       <ul>
         <li><a href="index.html">About</a></li>
@@ -39,6 +40,10 @@
         <li><a href="join.html">Join us</a></li>
       </ul>
     </nav>
+    <button class="theme-toggle" type="button" id="theme-toggle" aria-label="Switch to night mode" title="Switch to night mode">
+      <svg class="icon-moon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+      <svg class="icon-sun" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><circle cx="12" cy="12" r="4.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 2.5v2.5M12 19v2.5M2.5 12H5M19 12h2.5M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M5.3 18.7l1.8-1.8M16.9 7.1l1.8-1.8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
   </div>
 </header>
 
@@ -130,6 +135,22 @@
     });
     if (media.addEventListener) media.addEventListener('change', sync);
     sync();
+  })();
+
+  /* pin the menu bar: once the masthead has scrolled away, show the compact FOiL logo */
+  (function () {
+    var header = document.getElementById('site-header');
+    var masthead = header.querySelector('.masthead');
+    var queued = false;
+    function update() {
+      queued = false;
+      header.classList.toggle('is-stuck', window.scrollY >= masthead.offsetHeight - 1);
+    }
+    window.addEventListener('scroll', function () {
+      if (!queued) { queued = true; window.requestAnimationFrame(update); }
+    }, { passive: true });
+    window.addEventListener('resize', update);
+    update();
   })();
 </script>
 </body>

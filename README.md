@@ -18,6 +18,7 @@ Shared styles live in `assets/css/foil.css`. The logo mark is in `assets/logo/`:
 ## Editing
 
 - **Header and footer** are repeated on every page. If you change one, change all four.
+- **Sticky header**: the top band shows the full lab name. Once it scrolls away, the menu bar pins to the top and a small logo with "FOiL" slides in (a short script at the bottom of each page adds the `is-stuck` class). On phones the day/night button sits in the top band so the pinned bar has room for the menu.
 - **News items** go at the top of the `<ul class="news">` list in `index.html`, newest first.
 - **New members**: copy a `<li class="person">` block in `members.html`. Add a square photo (at least 400 × 400 px) to `assets/people/`.
 - **Example papers** on the Research page are `<li class="paper">` cards: title, venue, a one- or two-sentence summary, and a "Read the paper" button.
