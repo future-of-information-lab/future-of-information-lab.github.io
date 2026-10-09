@@ -23,6 +23,7 @@ Shared styles live in `assets/css/foil.css`. The logo mark is in `assets/logo/`:
 - **New members**: copy a `<li class="person">` block in `members.html`. Add a square photo (at least 400 × 400 px) to `assets/people/`.
 - **Example papers** on the Research page are `<li class="paper">` cards: title, venue, a one- or two-sentence summary, and a "Read the paper" button.
 - **Day/night mode**: the toggle in the header sets `data-theme` on the page and remembers the choice in the visitor's browser. Until someone clicks it, the site follows their system setting.
+- **After editing `foil.css`**, change the `?v=` value in the stylesheet link on all four pages (any new value works, e.g. today's date). Browsers keep the stylesheet for up to 10 minutes, so without a new value, returning visitors can see new pages with old styles.
 - **Colours** are tokens at the top of `foil.css`. Components use the tokens, never hex values, so a colourway change only touches the `:root` block.
 
 ## Publishing on GitHub Pages
