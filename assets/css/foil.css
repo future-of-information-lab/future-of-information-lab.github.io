@@ -105,8 +105,11 @@ h3 { font: 600 17px/1.4 var(--body); margin: 24px 0 10px; }
    header is sticky with a negative top equal to the masthead height, so the
    masthead scrolls away and the bar pins to the top. The header never changes
    height, so the page never jumps. Once pinned, a script adds .is-stuck and
-   the compact logo + "FOiL" slides into the bar. */
-:root { --masthead-h: 96px; --bar-h: 52px; }
+   the compact logo + "FOiL" slides into the bar.
+   The bar's bottom padding lifts the menu, logo and toggle onto one line and
+   leaves a clear gap between the lime current-page underline and the plum
+   rule, so the two never touch. */
+:root { --masthead-h: 92px; --bar-h: 56px; }
 html { scroll-padding-top: calc(var(--bar-h) + 16px); }
 .site-header {
   position: sticky; top: calc(env(safe-area-inset-top, 0px) - var(--masthead-h)); z-index: 20;
@@ -128,9 +131,9 @@ html { scroll-padding-top: calc(var(--bar-h) + 16px); }
 
 .brand-full { gap: 14px; }
 .brand-full img { height: 60px; }
-.wordmark { font: 500 clamp(20px, 3.4vw, 30px)/1.1 var(--display); letter-spacing: -0.01em; white-space: nowrap; }
+.wordmark { font: 500 clamp(28px, 4.6vw, 40px)/1.1 var(--display); letter-spacing: -0.01em; white-space: nowrap; }
 
-.bar { display: flex; align-items: center; gap: 0 22px; height: var(--bar-h); }
+.bar { display: flex; align-items: center; gap: 0 22px; height: var(--bar-h); padding-bottom: 8px; }
 .brand-compact {
   gap: 8px; flex: none; overflow: hidden;
   max-width: 0; margin-right: -22px; opacity: 0; visibility: hidden;
@@ -146,16 +149,16 @@ html { scroll-padding-top: calc(var(--bar-h) + 16px); }
   border-radius: 50%; background: var(--accent); transform: translateX(-50%);
 }
 
-.site-nav { min-width: 0; align-self: stretch; }
+.site-nav { min-width: 0; }
 .site-nav ul {
-  display: flex; gap: 0 26px; list-style: none; margin: 0; padding: 0; height: 100%;
+  display: flex; gap: 0 28px; list-style: none; margin: 0; padding: 0;
   overflow-x: auto; scrollbar-width: none;
 }
 .site-nav ul::-webkit-scrollbar { display: none; }
 .site-nav li { flex: none; display: flex; }
 .site-nav a {
-  display: flex; align-items: center; padding: 3px 2px 0; color: var(--text); text-decoration: none;
-  font-size: 15px; font-weight: 500; border-bottom: 3px solid transparent; white-space: nowrap;
+  display: block; padding: 9px 2px 6px; color: var(--text); text-decoration: none;
+  font-size: 17px; font-weight: 500; line-height: 1.2; border-bottom: 3px solid transparent; white-space: nowrap;
 }
 .site-nav a:hover { border-bottom-color: var(--line); }
 .site-nav a[aria-current="page"] { border-bottom-color: var(--accent); }
@@ -180,7 +183,7 @@ html { scroll-padding-top: calc(var(--bar-h) + 16px); }
 }
 
 /* ---------- page body ---------- */
-main { padding-block: 40px 24px; }
+main { padding-block: 40px 48px; }
 section + section { margin-top: 48px; }
 .section-title { padding-bottom: 8px; margin-bottom: 18px; border-bottom: 3px solid var(--accent); }
 
@@ -198,6 +201,7 @@ section + section { margin-top: 48px; }
 .news { list-style: none; margin: 0; padding: 0; }
 .news li { padding-block: 12px; border-bottom: 1px solid var(--line); }
 .news li:first-child { padding-top: 0; }
+.news li:last-child { padding-bottom: 0; border-bottom: 0; }
 .news time { display: block; font-size: 14px; font-weight: 600; color: var(--text-2); font-variant-numeric: tabular-nums; }
 .news p { margin: 2px 0 0; }
 
@@ -238,10 +242,9 @@ section + section { margin-top: 48px; }
 .steps li + li { margin-top: 8px; }
 
 /* ---------- footer ---------- */
-.site-footer { border-top: 1px solid var(--line); margin-top: 56px; font-size: 14px; color: var(--text-3); }
-.site-footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; padding-block: 20px 32px; }
+.site-footer { border-top: 1px solid var(--line); font-size: 14px; color: var(--text-3); }
+.site-footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 24px; padding-block: 20px 32px; }
 .site-footer p { margin: 0; }
-.site-footer .disclosure { flex-basis: 100%; padding-top: 12px; border-top: 1px solid var(--line); font-size: 13px; }
 .site-footer a { color: inherit; }
 
 @media (max-width: 560px) {
@@ -253,11 +256,17 @@ section + section { margin-top: 48px; }
   .masthead { padding-right: calc(var(--gutter) + 46px); }
   .brand-full { gap: 10px; }
   .brand-full img { height: 46px; }
+  /* as large as the row allows beside the mark and the day/night button */
+  .wordmark { font-size: clamp(19px, calc((100vw - 140px) / 11.2), 28px); }
   .theme-toggle { position: absolute; right: var(--gutter); top: calc((var(--masthead-h) - 38px) / 2); }
   .bar { gap: 0 12px; }
   .brand-compact { gap: 6px; margin-right: -12px; }
   .brand-compact img { height: 28px; }
   .wordmark-short { font-size: 21px; }
-  .site-nav ul { gap: 0 10px; }
-  .site-nav a { font-size: 13px; }
+  .site-nav ul { gap: 0 14px; }
+  .site-nav a { font-size: 15px; }
+}
+/* narrow phones: the pinned bar shows just the mark, so all four menu items fit */
+@media (max-width: 420px) {
+  .wordmark-short { display: none; }
 }
