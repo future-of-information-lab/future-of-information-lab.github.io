@@ -23,7 +23,7 @@
   /* roles (light) */
   --ground: var(--foil-ground);
   --line: var(--foil-line);
-  --rule: var(--foil-plum);
+  --rule: #5A3F4D; /* the plum of the logo artwork, so the mark and the rule read as one */
   --text: var(--foil-ink);
   --text-2: var(--foil-plum-700);
   --text-3: var(--foil-plum-500);
@@ -50,7 +50,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --ground: #2B2229; --line: #4A3D43; --rule: #7D6167;
+    --ground: #2B2229; --line: #4A3D43; --rule: #F8DFD8;
     --text: #F3ECE8; --text-2: #D9CBC9; --text-3: #B9A7A8; --heading: #F9E0D9; --link: #9CCFD9;
     --btn-bg: #F9E0D9; --btn-text: #2B2229; --btn-hover: #FFFFFF;
     --photo: #3A2F35;
@@ -60,7 +60,7 @@
   }
 }
 :root[data-theme="dark"] {
-  --ground: #2B2229; --line: #4A3D43; --rule: #7D6167;
+  --ground: #2B2229; --line: #4A3D43; --rule: #F8DFD8;
   --text: #F3ECE8; --text-2: #D9CBC9; --text-3: #B9A7A8; --heading: #F9E0D9; --link: #9CCFD9;
   --btn-bg: #F9E0D9; --btn-text: #2B2229; --btn-hover: #FFFFFF;
   --photo: #3A2F35;
@@ -185,12 +185,17 @@ html { scroll-padding-top: calc(var(--bar-h) + 16px); }
    the mark fades out and the compact logo takes its place in the same column,
    so the menu never moves. */
 @media (min-width: 561px) {
-  :root { --masthead-h: 68px; --bar-h: 62px; --mark: 98px; --mark-col: calc(var(--mark) + 22px); }
+  :root { --masthead-h: 68px; --bar-h: 62px; --mark: 120px; --mark-col: calc(var(--mark) + 22px); }
   .masthead, .bar { position: relative; padding-left: calc(var(--gutter) + var(--mark-col)); }
   /* extra room under the menu keeps the foot of the mark clear of the rule */
   .bar { padding-bottom: 14px; }
+  /* a heavier rule to carry the larger mark standing on it */
+  .site-header { border-bottom-width: 3px; }
   .brand-full img {
-    position: absolute; left: var(--gutter); top: 16px; height: var(--mark);
+    /* the foot of the stem stands on the rule, as if growing out of it (the
+       image has a sliver of empty space under the stem, hence the fraction) */
+    position: absolute; left: var(--gutter); height: var(--mark);
+    bottom: calc(-1 * var(--bar-h) - 1px - var(--mark) * 4 / 256);
     transition: opacity .2s ease;
   }
   /* drop the name towards the menu so the two read as one block beside the mark */
@@ -202,6 +207,12 @@ html { scroll-padding-top: calc(var(--bar-h) + 16px); }
     transition: opacity .2s ease, visibility .2s;
   }
   .is-stuck .brand-compact { max-width: none; }
+}
+
+/* small tablets: a slightly smaller mark and tighter menu so all four items fit */
+@media (min-width: 561px) and (max-width: 680px) {
+  :root { --mark: 100px; }
+  .site-nav ul { gap: 0 18px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
