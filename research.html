@@ -141,15 +141,14 @@
   (function () {
     var header = document.getElementById('site-header');
     var masthead = header.querySelector('.masthead');
-    var queued = false;
+    var limit = masthead.offsetHeight - 1;
     function update() {
-      queued = false;
-      header.classList.toggle('is-stuck', window.scrollY >= masthead.offsetHeight - 1);
+      header.classList.toggle('is-stuck', window.scrollY >= limit);
     }
-    window.addEventListener('scroll', function () {
-      if (!queued) { queued = true; window.requestAnimationFrame(update); }
-    }, { passive: true });
-    window.addEventListener('resize', update);
+    function measure() { limit = masthead.offsetHeight - 1; update(); }
+    window.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', measure);
+    window.addEventListener('pageshow', measure);
     update();
   })();
 </script>
